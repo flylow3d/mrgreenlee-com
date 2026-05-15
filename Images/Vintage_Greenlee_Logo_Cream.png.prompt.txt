@@ -1,0 +1,4 @@
+model: gemini-3-pro-image-preview
+refs: ['Images/Vintage_Greenlee_Logo.png']
+prompt:
+Same vintage Greenlee Bros. & Co. banner logo as the reference image — preserve every detail exactly: the bold black serif 'Greenlee' wordmark, the 'BROS. & CO.' subtext, the circled 'G' monogram, the 'ROCKFORD, ILLINOIS, U.S.A' line, and the symmetric ornamental rules with diamond endcaps and curly brackets on both sides. The ONLY change: replace the white background with a warm cream paper color, hex #f4efe6. All black artwork must remain pure black, sharp, and unchanged. No drop shadow, no texture, no other modification. Horizontal banner aspect.

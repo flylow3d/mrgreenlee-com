@@ -7,7 +7,16 @@
 !/.env.example
 !/README.md
 !/index.html
+!/the-workshop.html
+!/about.html
+!/404.html
 !/styles.css
+!/site.js
+!/favicon.svg
+!/favicon.png
+!/robots.txt
+!/sitemap.xml
+!/machines/
 !/CNAME
 !/CLAUDE.md
 !/SESSION_LOG.md
@@ -22,6 +31,17 @@ Thumbs.db
 desktop.ini
 *.swp
 *.tmp
+
+# NEVER publish raw phone photos — they carry GPS EXIF (location privacy).
+# The site only serves the EXIF-stripped derivatives in Images/web/.
+Images/Front Page/
+Images/*/_incoming/
+Images/*/_originals/
+Images/*/_classifications.txt
+Images/*/_review.html
+
+# Stray file from another project
+Images/Requirements*
 
 # Secrets — NEVER commit
 .env

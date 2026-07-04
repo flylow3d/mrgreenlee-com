@@ -4,20 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MrGreenlee — A Collection of Vintage Greenlee Woodworking Machinery</title>
-<meta name="description" content="A working museum of vintage Greenlee Bros. & Co. woodworking machinery, housed in two purpose-built timber frame workshops.">
+<meta name="description" content="A working museum of vintage Greenlee Bros. & Co. woodworking machinery — thirteen machines, c. 1895 to 1967, restored and housed in two purpose-built timber frame workshops.">
+<link rel="canonical" href="https://mrgreenlee.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="favicon.png" type="image/png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MrGreenlee — A Collection of Vintage Greenlee Woodworking Machinery">
+<meta property="og:description" content="A working museum of cast iron and craft — thirteen Greenlee machines, c. 1895 to 1967, in two purpose-built timber frame workshops.">
+<meta property="og:image" content="https://mrgreenlee.com/Images/web/og-card.jpg">
+<meta property="og:url" content="https://mrgreenlee.com/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
 </head>
 <body>
 
 <header class="site-header">
   <div class="container">
-    <a href="index.html" class="site-title">MrGreenlee</a>
+    <a href="index.html" class="site-title">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 5 L59 32 L32 59 L5 32 Z" fill="none" stroke="#8b4513" stroke-width="4"/><text x="32" y="43" font-family="Georgia, serif" font-size="30" font-weight="bold" fill="#8b4513" text-anchor="middle">G</text></svg>
+      MrGreenlee
+    </a>
     <nav class="site-nav">
-      <a href="index.html">Collection</a>
-      <a href="the-workshop.html">The Workshop</a>
+      <a href="index.html" aria-current="page">Collection</a>
+      <a href="the-workshop.html">The Buildings</a>
       <a href="about.html">About</a>
     </nav>
   </div>
@@ -25,130 +38,272 @@
 
 <main>
 
-  <section class="hero">
+  <section class="hero" style="padding-bottom:0;">
     <div class="container">
-      <img src="Images/Vintage_Greenlee_Logo_Cream.png" alt="Vintage Greenlee Bros. & Co. logo" class="hero-logo">
-      <h1 class="hero-title">A Collection of Vintage Greenlee Woodworking Machinery</h1>
-      <p class="hero-tagline">A working museum of cast iron and craft, housed in two purpose-built timber frame workshops.</p>
+      <img src="Images/web/greenlee-logo.png" alt="Vintage Greenlee Bros. & Co. logo — Rockford, Illinois, U.S.A." class="hero-logo" width="2400" height="448">
+      <span class="kicker">A private working museum</span>
+      <h1 class="hero-title">A Collection of Vintage Greenlee<br>Woodworking Machinery</h1>
+      <p class="hero-tagline">Cast iron and craft — thirteen machines spanning eight decades,
+      restored and housed in two purpose-built timber frame workshops.</p>
+
+      <figure class="plate plate-wide reveal" style="margin-top:56px;">
+        <img src="Images/web/engraving-works-wide.jpg" alt="Engraving-style illustration of the Greenlee Bros. & Co. factory works — brick mill buildings, smokestacks, and a rail siding loaded with crated machinery." width="956" height="498" fetchpriority="high">
+      </figure>
+      <figcaption class="plate-caption">The Greenlee Bros. &amp; Co. works, Rockford, Illinois &mdash; drawn in the manner of a period catalog plate.</figcaption>
+    </div>
+
+    <div class="stats-band reveal">
+      <div class="container">
+        <div class="stats">
+          <div class="stat"><div class="num">13</div><div class="lbl">Machines preserved</div></div>
+          <div class="stat"><div class="num">72</div><div class="lbl">Years of manufacture</div></div>
+          <div class="stat"><div class="num">6</div><div class="lbl">Greenlee series</div></div>
+          <div class="stat"><div class="num">2</div><div class="lbl">Timber frame shops</div></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <p class="intro">
-        For over a century, Greenlee Bros. &amp; Co. of Rockford, Illinois built woodworking machinery
-        of remarkable engineering and lasting beauty. This is a personal collection, restored and
-        preserved &mdash; each machine returned to working order in a shop built to honor it.
+      <p class="intro dropcap reveal">
+        For more than a century, Greenlee Bros. &amp; Co. of Rockford, Illinois built woodworking
+        machinery of remarkable engineering and lasting beauty &mdash; machines cast heavy, built square,
+        and meant to outlast the men who ran them. This is a personal collection of thirteen of those
+        machines, gathered one at a time from mills, shop floors, and auction yards, and brought back
+        to work in two timber frame buildings raised for the purpose. Nothing here is behind glass.
+        The point of an old machine is that it still cuts.
       </p>
+    </div>
+  </section>
 
-      <div class="section-rule"><h2>The Collection</h2></div>
+  <section class="tight">
+    <div class="container">
+      <div class="section-rule reveal"><h2>Eight Decades of Iron</h2></div>
+      <p class="section-sub reveal">Every dated machine in the collection, from the hand-powered joinery
+      of the 1890s to the last high-speed shapers of 1967. Select a marker to visit a machine.</p>
+
+      <div class="timeline reveal" role="navigation" aria-label="Collection timeline">
+        <div class="tl-rail">
+          <div class="tl-axis"></div>
+
+          <div class="tl-tick" style="left:5.6%"><span>1890</span></div>
+          <div class="tl-tick" style="left:16.7%"><span>1900</span></div>
+          <div class="tl-tick" style="left:27.8%"><span>1910</span></div>
+          <div class="tl-tick" style="left:38.9%"><span>1920</span></div>
+          <div class="tl-tick" style="left:50%"><span>1930</span></div>
+          <div class="tl-tick" style="left:61.1%"><span>1940</span></div>
+          <div class="tl-tick" style="left:72.2%"><span>1950</span></div>
+          <div class="tl-tick" style="left:83.3%"><span>1960</span></div>
+          <div class="tl-tick" style="left:94.4%"><span>1970</span></div>
+
+          <a class="tl-dot up" style="left:11.1%" href="machines/no-604-hauncher-relisher.html" title="No. 604 Hauncher &amp; Relisher, c. 1890s">
+            <span class="tl-label"><span class="m">&#8470; 604</span><span class="t">Hauncher</span><span class="y">c.&thinsp;1895</span></span></a>
+          <a class="tl-dot down" style="left:22.2%" href="machines/no-204-horizontal-mortiser.html" title="No. 204 Horizontal Mortiser, c. 1905">
+            <span class="tl-label"><span class="m">&#8470; 204</span><span class="t">Mortiser</span><span class="y">c.&thinsp;1905</span></span></a>
+          <a class="tl-dot up" style="left:27.8%" href="machines/no-426-self-feed-rip-saw.html" title="No. 426 Self-Feed Rip Saw, 1910">
+            <span class="tl-label"><span class="m">&#8470; 426</span><span class="t">Rip Saw</span><span class="y">1910</span></span></a>
+          <a class="tl-dot down" style="left:40%" href="machines/no-530-single-end-tenoner.html" title="No. 530 Single-End Tenoner, 1921">
+            <span class="tl-label"><span class="m">&#8470; 530</span><span class="t">Tenoner</span><span class="y">1921</span></span></a>
+          <a class="tl-dot up" style="left:42.2%" href="machines/no-356-vertical-boring-machine.html" title="No. 356 Vertical Boring Machine, 1923">
+            <span class="tl-label"><span class="m">&#8470; 356</span><span class="t">Boring</span><span class="y">1923</span></span></a>
+          <a class="tl-dot down" style="left:48.9%" href="machines/no-175-single-spindle-shaper.html" title="No. 175 Single-Spindle Shaper, 1929">
+            <span class="tl-label"><span class="m">&#8470; 175</span><span class="t">Shaper</span><span class="y">1929</span></span></a>
+          <a class="tl-dot up" style="left:57.8%" href="machines/no-105-30in-industrial-planer.html" title="No. 105 Industrial Planer, 1937">
+            <span class="tl-label"><span class="m">&#8470; 105</span><span class="t">Planer</span><span class="y">1937</span></span></a>
+          <a class="tl-dot down" style="left:84.4%" href="machines/no-495-variety-saw.html" title="No. 495 Variety Saw, 1961">
+            <span class="tl-label"><span class="m">&#8470; 495</span><span class="t">Variety Saw</span><span class="y">1961</span></span></a>
+          <a class="tl-dot up" style="left:91.1%" href="machines/no-180-double-spindle-shaper.html" title="Nos. 180 &amp; 165 matched shapers, 1967">
+            <span class="tl-label"><span class="m">&#8470; 180 &amp; 165</span><span class="t">Twin Shapers</span><span class="y">1967</span></span></a>
+        </div>
+      </div>
+      <p class="tl-note reveal">Three more &mdash; the &#8470; 410 band saw, &#8470; 227 mortiser, and &#8470; 495s variety saw &mdash; are in the queue, their dates still under research.</p>
+    </div>
+  </section>
+
+  <section id="collection">
+    <div class="container">
+      <div class="section-rule reveal"><h2>The Collection</h2></div>
+      <p class="section-sub reveal">Ordered by year of manufacture. Photographs show each machine as it
+      stands today &mdash; some restored, some just in the door.</p>
 
       <div class="machine-grid">
 
-        <a href="machines/no-604-hauncher-relisher.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/604.png" alt="No. 604 Hauncher &amp; Relisher"></div>
+        <a href="machines/no-604-hauncher-relisher.html" class="machine-card reveal">
+          <div class="photo">
+            <span class="no-plate">&#8470; 604</span>
+            <img src="Images/web/604-card.jpg" alt="No. 604 Hauncher &amp; Relisher" width="800" height="849" fetchpriority="high">
+          </div>
           <div class="label">
-            <div class="name">No. 604 Hauncher &amp; Relisher</div>
+            <div class="name">Hauncher &amp; Relisher</div>
             <div class="meta">c. 1890s &middot; Chicago casting</div>
           </div>
         </a>
 
-        <a href="machines/no-204-horizontal-mortiser.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/204.jpg" alt="No. 204 Horizontal Mortiser"></div>
+        <a href="machines/no-204-horizontal-mortiser.html" class="machine-card reveal d1">
+          <div class="photo">
+            <span class="no-plate">&#8470; 204</span>
+            <img src="Images/web/204-card.jpg" alt="No. 204 Horizontal Mortiser" width="800" height="602" fetchpriority="high">
+          </div>
           <div class="label">
-            <div class="name">No. 204 Horizontal Mortiser</div>
+            <div class="name">Horizontal Mortiser</div>
             <div class="meta">c. 1905 &middot; Transition era</div>
           </div>
         </a>
 
-        <a href="machines/no-426-self-feed-rip-saw.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/426.jpg" alt="No. 426 Self-Feed Rip Saw"></div>
+        <a href="machines/no-426-self-feed-rip-saw.html" class="machine-card reveal d2">
+          <div class="photo">
+            <span class="no-plate">&#8470; 426</span>
+            <img src="Images/web/426-card.jpg" alt="No. 426 Self-Feed Rip Saw" width="800" height="602" loading="lazy" decoding="async">
+          </div>
           <div class="label">
-            <div class="name">No. 426 Self-Feed Rip Saw</div>
+            <div class="name">Self-Feed Rip Saw</div>
             <div class="meta">1910 &middot; 400-Series</div>
           </div>
         </a>
 
-        <a href="machines/no-530-single-end-tenoner.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/530.jpg" alt="No. 530 Single-End Tenoner"></div>
+        <a href="machines/no-530-single-end-tenoner.html" class="machine-card reveal">
+          <div class="photo">
+            <span class="no-plate">&#8470; 530</span>
+            <img src="Images/web/530-card.jpg" alt="No. 530 Single-End Tenoner" width="800" height="602" loading="lazy" decoding="async">
+          </div>
           <div class="label">
-            <div class="name">No. 530 Single-End Tenoner</div>
+            <div class="name">Single-End Tenoner</div>
             <div class="meta">1921 &middot; 500-Series</div>
           </div>
         </a>
 
-        <a href="machines/no-356-vertical-boring-machine.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/356.jpg" alt="No. 356 Vertical Boring Machine"></div>
+        <a href="machines/no-356-vertical-boring-machine.html" class="machine-card reveal d1">
+          <div class="photo">
+            <span class="no-plate">&#8470; 356</span>
+            <img src="Images/web/356-card.jpg" alt="No. 356 Vertical Boring Machine" width="800" height="1062" loading="lazy" decoding="async">
+          </div>
           <div class="label">
-            <div class="name">No. 356 Vertical Boring Machine</div>
+            <div class="name">Vertical Boring Machine</div>
             <div class="meta">1923 &middot; 300-Series</div>
           </div>
         </a>
 
-        <a href="machines/no-175-single-spindle-shaper.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/175.jpg" alt="No. 175 Single-Spindle Shaper"></div>
+        <a href="machines/no-175-single-spindle-shaper.html" class="machine-card reveal d2">
+          <div class="photo">
+            <span class="no-plate">&#8470; 175</span>
+            <img src="Images/web/175-card.jpg" alt="No. 175 Single-Spindle Shaper" width="800" height="1062" loading="lazy" decoding="async">
+          </div>
           <div class="label">
-            <div class="name">No. 175 Single-Spindle Shaper</div>
+            <div class="name">Single-Spindle Shaper</div>
             <div class="meta">1929 &middot; 100-Series</div>
           </div>
         </a>
 
-        <a href="machines/no-105-30in-industrial-planer.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/105.jpg" alt="No. 105 Industrial Planer"></div>
+        <a href="machines/no-105-30in-industrial-planer.html" class="machine-card reveal">
+          <div class="photo">
+            <span class="no-plate">&#8470; 105</span>
+            <img src="Images/web/105-card.jpg" alt="No. 105 30-inch Industrial Planer" width="800" height="602" loading="lazy" decoding="async">
+          </div>
           <div class="label">
-            <div class="name">No. 105 Industrial Planer</div>
-            <div class="meta">1937 &middot; 30&Prime; wide</div>
+            <div class="name">30&Prime; Industrial Planer</div>
+            <div class="meta">1937 &middot; 100-Series</div>
           </div>
         </a>
 
-        <a href="machines/no-495-variety-saw.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/495.jpg" alt="No. 495 Variety Saw"></div>
+        <a href="machines/no-495-variety-saw.html" class="machine-card reveal d1">
+          <div class="photo">
+            <span class="no-plate">&#8470; 495</span>
+            <img src="Images/web/495-card.jpg" alt="No. 495 Variety Saw" width="800" height="602" loading="lazy" decoding="async">
+          </div>
           <div class="label">
-            <div class="name">No. 495 Variety Saw</div>
+            <div class="name">Variety Saw</div>
             <div class="meta">1961 &middot; Tilting arbor</div>
           </div>
         </a>
 
-        <a href="machines/no-180-double-spindle-shaper.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/180.jpg" alt="No. 180 Double-Spindle Shaper"></div>
+        <a href="machines/no-180-double-spindle-shaper.html" class="machine-card reveal d2">
+          <div class="photo">
+            <span class="no-plate">&#8470; 180</span>
+            <img src="Images/web/180-card.jpg" alt="No. 180 Double-Spindle Shaper" width="800" height="532" loading="lazy" decoding="async">
+          </div>
           <div class="label">
-            <div class="name">No. 180 Double-Spindle Shaper</div>
+            <div class="name">Double-Spindle Shaper</div>
             <div class="meta">1967 &middot; Matched pair</div>
           </div>
         </a>
 
-        <a href="machines/no-165-single-spindle-shaper.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/165.jpg" alt="No. 165 Single-Spindle Shaper"></div>
+        <a href="machines/no-165-single-spindle-shaper.html" class="machine-card reveal">
+          <div class="photo">
+            <span class="no-plate">&#8470; 165</span>
+            <img src="Images/web/165-card.jpg" alt="No. 165 Single-Spindle Shaper" width="800" height="602" loading="lazy" decoding="async">
+          </div>
           <div class="label">
-            <div class="name">No. 165 Single-Spindle Shaper</div>
+            <div class="name">Single-Spindle Shaper</div>
             <div class="meta">1967 &middot; Matched pair</div>
           </div>
         </a>
 
-        <a href="machines/no-410-36in-band-saw.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/410.jpg" alt="No. 410 Band Saw"></div>
+        <a href="machines/no-410-36in-band-saw.html" class="machine-card reveal d1">
+          <div class="photo">
+            <span class="no-plate">&#8470; 410</span>
+            <span class="status-chip">Awaiting restoration</span>
+            <img src="Images/web/410-card.jpg" alt="No. 410 36-inch Band Saw standing in the timber frame workshop" width="800" height="1067" loading="lazy" decoding="async">
+          </div>
           <div class="label">
-            <div class="name">No. 410 Band Saw</div>
-            <div class="meta">36&Prime; &middot; In progress</div>
+            <div class="name">36&Prime; Band Saw</div>
+            <div class="meta">400-Series &middot; Acquired 2024</div>
           </div>
         </a>
 
-        <a href="machines/no-227-hollow-chisel-mortiser.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/227.jpg" alt="No. 227 Hollow Chisel Mortiser"></div>
+        <a href="machines/no-227-hollow-chisel-mortiser.html" class="machine-card reveal d2">
+          <div class="photo">
+            <span class="no-plate">&#8470; 227</span>
+            <span class="status-chip">Awaiting restoration</span>
+            <img src="Images/web/227-card.jpg" alt="No. 227 Hollow Chisel Mortiser" width="800" height="1067" loading="lazy" decoding="async">
+          </div>
           <div class="label">
-            <div class="name">No. 227 Hollow Chisel Mortiser</div>
-            <div class="meta">200-Series &middot; In progress</div>
+            <div class="name">Hollow Chisel Mortiser</div>
+            <div class="meta">200-Series &middot; In the queue</div>
           </div>
         </a>
 
-        <a href="machines/no-495s-variety-saw-spec.html" class="machine-card">
-          <div class="photo"><img src="Images/Front%20Page/495s.jpg" alt="No. 495s Variety Saw"></div>
+        <a href="machines/no-495s-variety-saw-spec.html" class="machine-card reveal">
+          <div class="photo">
+            <span class="no-plate">&#8470; 495s</span>
+            <span class="status-chip">Under research</span>
+            <img src="Images/web/495s-card.jpg" alt="No. 495s Variety Saw, special model" width="800" height="600" loading="lazy" decoding="async">
+          </div>
           <div class="label">
-            <div class="name">No. 495s Variety Saw</div>
-            <div class="meta">Sliding table &middot; In progress</div>
+            <div class="name">Variety Saw, Special</div>
+            <div class="meta">400-Series &middot; Sliding table</div>
           </div>
         </a>
 
+      </div>
+
+      <div class="center-cta reveal">
+        <a class="btn-quiet" href="machines/no-604-hauncher-relisher.html">Begin with the oldest machine &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-rule reveal"><h2>Two Buildings, Built for Iron</h2></div>
+      <p class="section-sub reveal">You cannot keep a working museum in a garage. The collection lives in
+      two timber frame buildings raised the old way &mdash; heavy posts, pegged joints, room for machines to run.</p>
+
+      <div class="two-up">
+        <a class="building-card reveal" href="the-workshop.html">
+          <figure class="plate"><img src="Images/web/engraving-workshop.jpg" alt="Engraving-style illustration of the timber frame Workshop" width="1024" height="576" loading="lazy" decoding="async"></figure>
+          <h3>The Workshop</h3>
+          <p>Where the restored machines stand and run &mdash; joinery under a pegged timber roof.</p>
+        </a>
+        <a class="building-card reveal d1" href="the-workshop.html">
+          <figure class="plate"><img src="Images/web/engraving-planing-mill.jpg" alt="Engraving-style illustration of the timber frame Planing Mill" width="1024" height="576" loading="lazy" decoding="async"></figure>
+          <h3>The Planing Mill</h3>
+          <p>The heavy end of the collection &mdash; machines that turn rough lumber square.</p>
+        </a>
+      </div>
+
+      <div class="center-cta reveal">
+        <a class="btn-quiet" href="the-workshop.html">Tour the buildings &rarr;</a>
       </div>
     </div>
   </section>
@@ -157,8 +312,14 @@
 
 <footer class="site-footer">
   <div class="container">
-    <div class="ornament">&#10087;</div>
-    <div>MrGreenlee &middot; A personal collection</div>
+    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 5 L59 32 L32 59 L5 32 Z" fill="none" stroke="#8b4513" stroke-width="4"/><text x="32" y="43" font-family="Georgia, serif" font-size="30" font-weight="bold" fill="#8b4513" text-anchor="middle">G</text></svg>
+    <div>MrGreenlee &middot; A personal collection of Greenlee Bros. &amp; Co. woodworking machinery</div>
+    <nav class="foot-nav">
+      <a href="index.html">Collection</a>
+      <a href="the-workshop.html">The Buildings</a>
+      <a href="about.html">About</a>
+    </nav>
+    <p style="margin:18px 0 0; font-size:0.78rem; font-style:italic;">Machine photographs show the actual collection. Building and factory illustrations are modern renderings in the manner of period catalog plates.</p>
   </div>
 </footer>
 

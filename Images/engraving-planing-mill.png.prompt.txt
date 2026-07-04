@@ -1,0 +1,4 @@
+model: gemini-3.1-flash-image-preview
+refs: []
+prompt:
+Antique 19th-century steel engraving illustration, fine cross-hatch linework, monochrome dark sepia ink on aged cream paper, flat uniform background color #f4efe6, in the manner of an 1890s industrial machinery catalog plate. No text, no letters, no numbers, no labels, no watermark, no border, no modern elements. Subject: a long timber-frame planing mill building with a broad gable roof and clerestory windows, wide sliding barn door standing open to reveal the dark silhouette of a large cast-iron woodworking machine inside, lumber stacks and a sawdust bin in the yard, three-quarter perspective view. The building occupies the middle band of the square canvas with plain cream paper at top and bottom.

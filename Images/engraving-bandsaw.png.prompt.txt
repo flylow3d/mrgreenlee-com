@@ -1,0 +1,4 @@
+model: gemini-3.1-flash-image-preview
+refs: []
+prompt:
+Antique 19th-century steel engraving illustration, fine cross-hatch linework, monochrome dark sepia ink on aged cream paper, flat uniform background color #f4efe6, in the manner of an 1890s industrial machinery catalog plate. No text, no letters, no numbers, no labels, no watermark, no border, no modern elements. Subject: a single massive antique cast-iron band saw machine of the early 1900s with a tall gracefully curved frame, two large enclosed wheels, exposed gears and a broad tilting work table, drawn as a centered catalog product illustration with a soft ground shadow, floating on plain cream paper with generous empty margins.

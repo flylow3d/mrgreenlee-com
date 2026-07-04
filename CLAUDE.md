@@ -8,13 +8,18 @@ Currently a **blank-slate scaffold** — there's no site content yet. `index.htm
 
 ## Status
 
-Home page (`index.html`) and stylesheet (`styles.css`) built in the heritage / industrial museum aesthetic — cream background, serif type, sienna accent. Machine grid populated from the 13-machine `Greenlee Machine Directory.xlsx`. Per-machine and building image folders created under `Images/`. Photo pipeline (`tools/process_photos.py`) live and tested on No. 410 (12 photos classified, awaiting `--commit`).
+Full site built out (17 pages): `index.html` (engraved hero plate, stats band, clickable 1890s–1967 timeline, sepia-to-color archive grid), all 13 `machines/<slug>.html` detail pages (cast-iron nameplate spec panels fed from the Excel directory, unique prose, prev/next ring), `the-workshop.html` (both buildings), `about.html` (Greenlee history + collection principles; personal bio is an HTML comment awaiting Joe), `404.html`. Plus `site.js` (scroll reveals, header shadow — reduced-motion safe), `favicon.svg`/`.png`, OG cards, `robots.txt`, `sitemap.xml`.
+
+Image pipeline: `tools/make_web_images.py` builds `Images/web/` derivatives (800px cards / 1600px heroes from `Images/Front Page/` originals, OG card, transparent-background logo, favicon). `tools/crop_engravings.py` trims the four Gemini engravings (`Images/engraving-*.png` — works, workshop, planing mill, band saw vignette; crop boxes are hand-tuned per generation). Re-run both after changing source images.
+
+Photo pipeline (`tools/process_photos.py`) live and tested on No. 410 (12 photos classified, awaiting `--commit`).
 
 **Open items:**
-- Commit the No. 410 band saw test batch and pick its `hero.jpg`.
-- Build `the-workshop.html`, `about.html`, and the first machine detail page (suggested: No. 604 Hauncher & Relisher).
+- Commit the No. 410 band saw test batch (`--commit`) and pick its `hero.jpg`; wire real galleries into the machine pages' `gallery-empty` placeholders.
 - Process Google Photos albums for the other 12 machines + Workshop + Planing Mill.
-- Infra: `git init`, create GitHub repo, point IONOS DNS at GitHub Pages.
+- Joe: personal bio for `about.html` (see HTML comment), fact-check machine-page prose and building descriptions, decide name/location disclosure.
+- Infra: git commits (repo exists but has a Windows "dubious ownership" block — run `git config --global --add safe.directory C:/Users/smitjj09/Documents/MrGreenlee`), create GitHub repo, point IONOS DNS at GitHub Pages.
+- Stray file: `Images/Requirements Ledger Tool — Architecture Sketch_v.01.pdf` looks like it belongs to another project — Joe to move/delete.
 
 See `SESSION_LOG.md` for full session history. See `SETUP_NOTES.md` for the original orientation guide.
 

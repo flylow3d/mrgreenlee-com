@@ -57,3 +57,41 @@ Cross-references: `CLAUDE.md` (project rules + current state), `SETUP_NOTES.md` 
   - Build first machine detail page as a template — suggested: `machines/no-604-hauncher-relisher.html` (oldest in collection).
   - Process more machines through the photo pipeline as albums become ready.
 - Infra still pending: `git init`, GitHub repo creation, IONOS DNS A records → GitHub Pages, GitHub Pages enable.
+
+### Session 2 (2026-07-03) — Full site build-out: 17 pages, engravings, image pipeline
+
+**Goal:** "Review the site and take it to the next level" — from a one-page grid to a complete museum site.
+
+**Built — pages (all hand-authored, all links verified working)**
+- `index.html` rebuilt: transparent-ink Greenlee logo, engraved factory-works hero plate, stats band (13 machines / 72 years / 6 series / 2 buildings), drop-cap intro, **clickable timeline** (c. 1895 → 1967, decade ticks, alternating labels; scrolls horizontally on mobile), machine grid upgraded with corner №-plates, status chips on the three pending machines, and an archive treatment — photos render sepia and bloom to full color on hover.
+- **All 13 `machines/<slug>.html` detail pages**: breadcrumb, ghost model-number backdrop, photo with caption, **cast-iron nameplate spec panel** (riveted corners; Model/Type/Serial/Built/Status from `Greenlee Machine Directory.xlsx`), 2–3 sections of machine-specific prose (type history + this example's story), gallery placeholder, prev/next ring in chronological order.
+- `the-workshop.html` — "Built for Iron": both buildings with engraving plates; copy kept truthful-generic pending real construction facts/photos. Nav label is "The Buildings".
+- `about.html` — Greenlee Bros. history (1862 Chicago, twins Robert & Ralph, 1904 Rockford move, later shift to electricians' tools), collection overview, four principles list. Personal bio left as HTML comment for Joe.
+- `404.html` ("Exhibit Not Found"), `robots.txt`, `sitemap.xml`, `favicon.svg` + `favicon.png` (diamond-G).
+
+**Built — design system & behavior**
+- `styles.css` fully rewritten: paper-grain overlay, sticky blur header with scroll shadow, plate/engraving components (mix-blend multiply melts cream backgrounds into the page), timeline, nameplates, stats band, pager, gallery empty-states, reveal animations (IntersectionObserver via new `site.js`, `prefers-reduced-motion` respected), print styles, responsive to 390px (verified).
+- SEO/social: canonical + OG tags on every page, per-machine OG images, generated 1200×630 OG card.
+
+**Built — tooling (rerunnable)**
+- `tools/make_web_images.py`: `Images/Front Page/` originals (3–7 MB each) → `Images/web/` 800px cards + 1600px heroes (EXIF-rotated, EXIF-stripped, ~43 MB → ~1.4 MB homepage payload); also OG card, favicon PNG, and luminance-keyed transparent logo.
+- `tools/crop_engravings.py`: trims paper-edge artifacts from Gemini engravings (hand-tuned crop boxes per generation).
+
+**Gemini art (free `gemini-3.1-flash-image-preview`, shared style preamble)**
+- Four engravings in `Images/`: factory works (hero), Workshop barn, Planing Mill, band saw vignette (about page). Captioned honestly on-site as "modern renderings in the manner of period catalog plates."
+
+**Verification**
+- Link/asset/anchor checker across all 17 pages: 0 problems. Headless-Edge screenshots at 1440px and true 390px (via iframe harness — note: headless Edge clamps windows to ~476px min width, so naive narrow screenshots crop and look falsely broken).
+- Bugs found by screenshot and fixed: timeline label collisions (years moved to their own line), drop-cap selector (`.intro .dropcap` → `.intro.dropcap`), logo cream-on-cream box (replaced multiply hack with true alpha logo).
+
+**Known caveats / for Joe**
+- Machine-page prose is historically-grounded but Claude-written — fact-check, especially per-machine claims; status lines say "In the collection" (not "running") for the ten dated machines on purpose.
+- Photo captions are generic ("as it stands in the collection") except 604/530/410 where the photo content was verified.
+- Git blocked by Windows "dubious ownership" — fix: `git config --global --add safe.directory C:/Users/smitjj09/Documents/MrGreenlee`. Nothing committed this session.
+- Stray `Images/Requirements Ledger Tool — Architecture Sketch_v.01.pdf` (from another project) — move or delete.
+- `Images/Front Page/` originals (~43 MB) would all be committed under the whitelist gitignore — decide whether to keep them versioned before the first push.
+
+**Where we left off / next session**
+- Joe reviews the live pages (open `index.html` in a browser), edits prose/captions, adds bio.
+- Commit the No. 410 photo batch; wire its gallery into the machine page.
+- Git setup → GitHub repo → IONOS DNS → GitHub Pages.

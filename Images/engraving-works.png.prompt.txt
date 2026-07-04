@@ -1,0 +1,4 @@
+model: gemini-3.1-flash-image-preview
+refs: []
+prompt:
+Antique 19th-century steel engraving illustration, fine cross-hatch linework, monochrome dark sepia ink on aged cream paper, flat uniform background color #f4efe6, in the manner of an 1890s industrial machinery catalog plate. No text, no letters, no numbers, no labels, no watermark, no border, no modern elements. Subject: wide panoramic view of a sprawling 1890s American factory complex, long two-story brick mill buildings with rows of arched windows, tall smokestacks trailing smoke, a rail siding with flatcars loaded with crated machinery, horse-drawn wagons and small figures of workmen in the yard. The scene occupies the middle horizontal band of the square canvas, with plain cream paper above and below, sky rendered with sparse horizontal hatching that fades away.

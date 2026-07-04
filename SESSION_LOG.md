@@ -109,3 +109,21 @@ Cross-references: `CLAUDE.md` (project rules + current state), `SETUP_NOTES.md` 
 - Remediation: added permanent gitignore rules (`Images/Front Page/`, `Images/*/_incoming/`, `_originals/`, `_classifications.txt`, `_review.html`, stray PDF); rewrote the local root commit to drop the files (repo had never been *shared* from this side, but remote had them); **force-pushed clean history**; verified the photo URLs now 404 on the live site.
 - Residual risk: GitHub retains orphaned commits (`a782307`, `095013b`) fetchable by SHA until Support purges them. Open item for Joe: file a GitHub Support removal request, or accept the residual risk. The site itself only ever serves EXIF-stripped `Images/web/` derivatives.
 - Git identity set locally (matches initial commit author). Local branch tracks `origin/main`; publish workflow is now commit → push.
+
+### Session 4 (2026-07-04) — Aspect-ratio fix + 1930s catalog integration
+
+**Aspect-ratio bug (user-reported via phone screenshot)**
+- Root cause: global `img` rule lacked `height: auto`, so the HTML `height` attribute became a fixed height wherever CSS overrode width — stretching the hero logo, all 13 machine photos, and three engravings (34 distorted renderings). One-line CSS fix; verified live.
+- Installed Playwright + Chromium; built `tools/audit_images.py` (renders every page desktop + Pixel 7, flags any image whose rendered box distorts its natural ratio; `local` and `live` modes). Added to `tools/requirements.txt` and CLAUDE.md. Note: headless-Edge screenshots below ~476px window width are cropped, not resized — the min-window clamp makes mobile look falsely broken; use Playwright device emulation instead.
+
+**Catalog integration (vintagemachinery.org publication 31151)**
+- Downloaded the Greenlee general-line catalog scan (159 pp., OCR layer) — a binder of per-machine bulletins, dates spanning Nov 1929 – Jul 1937. PDF kept out of the repo (38 MB); pages cropped as needed. Source: http://vintagemachinery.org/pubs/detail.aspx?id=31151
+- 12 of 13 machines found in the catalog (all but the c. 1905 No. 204, discontinued by then). Cropped plates → `Images/catalog/cat-<key>.jpg` (~150-280 KB each).
+- Every machine page except the 204 gained a "From the Catalog" section: period plate in a frame, quoted catalog copy, verified specs where legible (175/180 from Bulletin 175-182 Nov 1929; 495/495-S from Bulletin 495 Apr 1930; 410 from Bulletin 410 Jul 1937), and a VintageMachinery.org credit link. New CSS: `.catalog-row`, `.period-quote`, `.catalog-specs`, `.credit-line`.
+- **Research findings from the catalog:** (1) the 495s question is SOLVED — the Apr 1930 bulletin documents the No. 495-S as the sliding-table model, photo included; page prose/nameplate updated from "likely" to documented. (2) The 604's design lineage goes back to the **1876 Philadelphia Centennial Exposition** ("received the highest awards"); catalog lists it as the "Sash Relisher and Mortiser". (3) Greenlee claims the **first successful hollow chisel mortiser** ("more than half a century ago", i.e. ~1870s-80s) — quoted on the 227 page. (4) The 1931-era No. 165 is belted-drive line; No. 175/180 electric line.
+- Crop boxes for the catalog plates are hand-tuned in scratch scripts; re-cropping needs the PDF re-downloaded (not stored in repo).
+- Verified: link check, `audit_images.py` local + live PASS, Playwright section screenshots, pushed live.
+
+**For Joe**
+- Fact-check the quoted catalog copy against the PDF if desired (transcribed from OCR + visual reading).
+- The catalog is worth a browse for the machines' sake: http://vintagemachinery.org/pubs/detail.aspx?id=31151

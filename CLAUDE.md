@@ -12,6 +12,8 @@ Full site built out (17 pages): `index.html` (engraved hero plate, stats band, c
 
 Image pipeline: `tools/make_web_images.py` builds `Images/web/` derivatives (800px cards / 1600px heroes from `Images/Front Page/` originals, OG card, transparent-background logo, favicon). `tools/crop_engravings.py` trims the four Gemini engravings (`Images/engraving-*.png` — works, workshop, planing mill, band saw vignette; crop boxes are hand-tuned per generation). Re-run both after changing source images.
 
+QA: `py tools\audit_images.py` (Playwright; needs `playwright` + chromium installed) renders every page desktop + Pixel 7 and fails if any image's rendered box distorts its natural aspect ratio. Run `local` before pushing CSS/layout changes, `live` after the Pages build.
+
 Photo pipeline (`tools/process_photos.py`) live and tested on No. 410 (12 photos classified, awaiting `--commit`).
 
 **Deployed:** live at https://mrgreenlee.com (repo `flylow3d/mrgreenlee-com`, GitHub Pages from `main` root, HTTPS enforced). Publish workflow is simply commit → push.

@@ -95,3 +95,17 @@ Cross-references: `CLAUDE.md` (project rules + current state), `SETUP_NOTES.md` 
 - Joe reviews the live pages (open `index.html` in a browser), edits prose/captions, adds bio.
 - Commit the No. 410 photo batch; wire its gallery into the machine page.
 - Git setup → GitHub repo → IONOS DNS → GitHub Pages.
+
+### Session 3 (2026-07-04) — Deployed: mrgreenlee.com is live
+
+**Shipped**
+- Fixed the git "dubious ownership" block (`safe.directory`), removed a stale `index.lock`.
+- Discovered Joe had already done the infra after Session 1: repo `flylow3d/mrgreenlee-com` (public), GitHub Pages enabled from `main` root, IONOS DNS pointed (apex A records + www), HTTPS cert approved.
+- Committed the full Session-2 site build (69 files) and pushed. Enabled `https_enforced`.
+- **Verified live:** https://mrgreenlee.com serves the new site (homepage, machine pages, web images all 200; http→https 301).
+
+**Privacy incident found & remediated**
+- The May 16 push had published raw phone photos with **GPS EXIF intact**: all 13 `Images/Front Page/` originals + the 12 No. 410 `_incoming/` shots. Confirmed GPS tags with Pillow (Pixel 4a/8). They were both in the repo and served on the live site for ~7 weeks.
+- Remediation: added permanent gitignore rules (`Images/Front Page/`, `Images/*/_incoming/`, `_originals/`, `_classifications.txt`, `_review.html`, stray PDF); rewrote the local root commit to drop the files (repo had never been *shared* from this side, but remote had them); **force-pushed clean history**; verified the photo URLs now 404 on the live site.
+- Residual risk: GitHub retains orphaned commits (`a782307`, `095013b`) fetchable by SHA until Support purges them. Open item for Joe: file a GitHub Support removal request, or accept the residual risk. The site itself only ever serves EXIF-stripped `Images/web/` derivatives.
+- Git identity set locally (matches initial commit author). Local branch tracks `origin/main`; publish workflow is now commit → push.

@@ -14,12 +14,16 @@ Image pipeline: `tools/make_web_images.py` builds `Images/web/` derivatives (800
 
 Photo pipeline (`tools/process_photos.py`) live and tested on No. 410 (12 photos classified, awaiting `--commit`).
 
+**Deployed:** live at https://mrgreenlee.com (repo `flylow3d/mrgreenlee-com`, GitHub Pages from `main` root, HTTPS enforced). Publish workflow is simply commit → push.
+
+**Privacy rule:** raw phone photos carry GPS EXIF. `Images/Front Page/`, `Images/*/_incoming/`, `_originals/` are gitignored — the site serves only the EXIF-stripped derivatives in `Images/web/`. Never loosen those ignore rules. (History note: the originals were public on the repo 2026-05-16 → 2026-07-04; branch history was rewritten to remove them, but GitHub may retain orphaned commits until Support purges them.)
+
 **Open items:**
+- Optional: ask GitHub Support to purge the orphaned pre-rewrite commits (`a782307`, `095013b`) that contained GPS photos.
 - Commit the No. 410 band saw test batch (`--commit`) and pick its `hero.jpg`; wire real galleries into the machine pages' `gallery-empty` placeholders.
 - Process Google Photos albums for the other 12 machines + Workshop + Planing Mill.
 - Joe: personal bio for `about.html` (see HTML comment), fact-check machine-page prose and building descriptions, decide name/location disclosure.
-- Infra: git commits (repo exists but has a Windows "dubious ownership" block — run `git config --global --add safe.directory C:/Users/smitjj09/Documents/MrGreenlee`), create GitHub repo, point IONOS DNS at GitHub Pages.
-- Stray file: `Images/Requirements Ledger Tool — Architecture Sketch_v.01.pdf` looks like it belongs to another project — Joe to move/delete.
+- Stray file: `Images/Requirements Ledger Tool — Architecture Sketch_v.01.pdf` looks like it belongs to another project (gitignored) — Joe to move/delete.
 
 See `SESSION_LOG.md` for full session history. See `SETUP_NOTES.md` for the original orientation guide.
 

@@ -158,3 +158,34 @@ to refresh; `gen_archive_page.py` rebuilds archive.html from the JSON.
   Optional nicety: add an IONOS CNAME `archive.mrgreenlee.com` → `flylow3d.github.io` and set the
   custom domain on the greenlee-archive repo, then swap the base URL in archive.html.
 - VintageMachinery relies on donations — the archive page and README both link their donation page.
+
+### Session 5b (2026-07-05) — "Through the Catalogs": machine progressions mined from all 53 PDFs
+
+**Corpus mining.** Text-indexed all 53 archive PDFs for the collection's model numbers, then
+visually triaged the image-only scans (1922/1925 pocket catalogs, machine bulletins, the 1915
+schools booklet) via contact sheets. Cut 25 new frames into `Images/catalog/ts-<model>-<year>.jpg`
+(crop boxes in scratch scripts; regenerate from the archive PDFs if needed).
+
+**New feature.** Ten machine pages gain a "Through the Catalogs" filmstrip — horizontally scrolling
+frames, each with year + caption, each linking to the exact page (`#page=N`) of the mirrored PDF in
+the Paper Archive. New CSS `.filmstrip`/`.frame`.
+
+**Research finds along the way:**
+- Pub 18234 is an **1880s Chicago broadside** (227-231 W. Twelfth St.; patents Aug 1874 / May 1881):
+  ancestor frames for the 604 (Relishing & Mortising Machine, Centennial medal, $300), the 227
+  (Hollow Chisel Mortising Machine, $400), and the 426 (Self-Feeding Saw Table).
+- The 1942 No. 227-BM bulletin pins Greenlee's hollow-chisel invention to **1874**.
+- The **1922 pocket catalog** carries the No. 227-B, No. 356 (built-in motor), No. 426, No. 530,
+  and No. 604 as then-current models — for the 1921 tenoner and 1923 borer these are effectively
+  period portraits of Joe's machines. The 1925 catalog is a larger reprint of the same line (spreads;
+  skipped). No shapers/planers/band saws in either pocket edition.
+- Pub 901 is a **1949 factory shipping copy** for a 495-S sold to a Los Angeles furniture company
+  ($1,605) — used as a frame on the 495s page.
+- 1958 trade-directory pages (4692, 23489 p22) close the arc for the 227, 495, 180, and 165.
+- The 204 appears in no catalog in the archive; its strip shows the 1922 No. 214 successor with an
+  honest caption. The 175/105/410 have single catalog appearances (already shown in "From the
+  Catalog") and got no strip.
+
+**Verified:** link check, image audit local + live PASS, Playwright section screenshots, live spot
+checks. Machine pages now run: photo+nameplate → prose → From the Catalog → Through the Catalogs →
+Photographs → pager.

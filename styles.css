@@ -1013,6 +1013,53 @@ section.tight { padding: 40px 0; }
   .pub-links { grid-column: 2; white-space: normal; }
 }
 
+/* ---------- "Through the Catalogs" filmstrip ---------- */
+
+.filmstrip {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  padding: 6px 4px 18px;
+  align-items: flex-start;
+}
+.frame {
+  flex: 0 0 auto;
+  width: 200px;
+  border: none;
+  color: inherit;
+  text-align: center;
+}
+.frame .plate { margin: 0; }
+.frame .plate img {
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+}
+.frame:hover .plate {
+  border-color: var(--accent);
+  outline-color: var(--accent);
+}
+.frame .f-year {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--serif-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent-dk);
+  line-height: 1;
+}
+.frame .f-cap {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.frame:hover .f-cap { color: var(--accent-dk); }
+
 /* ---------- Reveal animations ---------- */
 
 .reveal {

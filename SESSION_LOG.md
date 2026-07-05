@@ -127,3 +127,34 @@ Cross-references: `CLAUDE.md` (project rules + current state), `SETUP_NOTES.md` 
 **For Joe**
 - Fact-check the quoted catalog copy against the PDF if desired (transcribed from OCR + visual reading).
 - The catalog is worth a browse for the machines' sake: http://vintagemachinery.org/pubs/detail.aspx?id=31151
+
+### Session 5 (2026-07-05) — The Paper Archive: full VintageMachinery Greenlee mirror
+
+**Downloaded** all 53 Greenlee publications from VintageMachinery.org's manufacturer index
+(http://vintagemachinery.org/mfgIndex/detail.aspx?id=403&tab=3) via a polite Playwright scraper
+(~3s between requests). 582 MB total; every file under GitHub's 100 MB cap. Metadata (title, type,
+date, pages, submitter) captured per pub to `greenlee_pubs.json`.
+
+**Hosting split** — new dedicated public repo **`flylow3d/greenlee-archive`** (local clone:
+`C:\Users\smitjj09\Documents\greenlee-archive`), GitHub Pages enabled. Keeps the 582 MB out of the
+site repo. Layout: `pdfs/<vm-id>.pdf` + `greenlee_pubs.json` + credited README (metadata table) +
+root `index.html` redirect → mrgreenlee.com/archive.html.
+
+**Site** — new `archive.html` ("The Paper Archive"): credit plate up top (with VM donation link),
+publications grouped by type and sorted by year, each with page count, size, mirror link, and a
+Source link back to the VM detail page. "Archive" added to header/footer nav on all pages; sitemap +
+gitignore updated. New CSS: `.credit-plate`, `.pub-list`.
+
+**Notable holdings**: 1922 & 1925 pocket/full catalogs (4 sections each), the 1931 general-line
+binder, "125 Years of Excellence" (1988 company history, 116 pp.), "The Making of an Auger Bit",
+per-machine bulletins incl. No. 495-S (id 901), No. 495 (11637), No. 532 tenoner + manual, No. 356
+borer (34200), No. 227-BM (225, 6563) — future material for machine pages.
+
+**Regen**: re-run `scratchpad/vm_download.py` (session scratchpad; re-create from this log if gone)
+to refresh; `gen_archive_page.py` rebuilds archive.html from the JSON.
+
+**For Joe**
+- Mirror links on archive.html point at flylow3d.github.io/greenlee-archive/pdfs/&lt;id&gt;.pdf.
+  Optional nicety: add an IONOS CNAME `archive.mrgreenlee.com` → `flylow3d.github.io` and set the
+  custom domain on the greenlee-archive repo, then swap the base URL in archive.html.
+- VintageMachinery relies on donations — the archive page and README both link their donation page.

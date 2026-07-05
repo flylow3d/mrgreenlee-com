@@ -18,6 +18,8 @@ Photo pipeline (`tools/process_photos.py`) live and tested on No. 410 (12 photos
 
 **Deployed:** live at https://mrgreenlee.com (repo `flylow3d/mrgreenlee-com`, GitHub Pages from `main` root, HTTPS enforced). Publish workflow is simply commit → push.
 
+**The Paper Archive:** `archive.html` lists all 53 Greenlee publications mirrored from VintageMachinery.org (with prominent credit + donation link). The PDFs live in a separate repo `flylow3d/greenlee-archive` (local clone at `C:\Users\smitjj09\Documents\greenlee-archive`, 582 MB, served by its own GitHub Pages at flylow3d.github.io/greenlee-archive) — do NOT copy them into this repo. Metadata: `greenlee_pubs.json` in that repo. Machine pages' "From the Catalog" sections use crops in `Images/catalog/` from publication 31151.
+
 **Privacy rule:** raw phone photos carry GPS EXIF. `Images/Front Page/`, `Images/*/_incoming/`, `_originals/` are gitignored — the site serves only the EXIF-stripped derivatives in `Images/web/`. Never loosen those ignore rules. (History note: the originals were public on the repo 2026-05-16 → 2026-07-04; branch history was rewritten to remove them, but GitHub may retain orphaned commits until Support purges them.)
 
 **Open items:**

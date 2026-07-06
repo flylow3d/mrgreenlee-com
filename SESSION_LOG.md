@@ -189,3 +189,28 @@ the Paper Archive. New CSS `.filmstrip`/`.frame`.
 **Verified:** link check, image audit local + live PASS, Playwright section screenshots, live spot
 checks. Machine pages now run: photo+nameplate → prose → From the Catalog → Through the Catalogs →
 Photographs → pager.
+
+### Session 6 (2026-07-06) — Copy clarity + "Collection at a glance" data viz
+
+**Copy:** machine-page second heading "This example" → "The one in this collection" (Joe's wife
+found "This example" unclear). All 13 pages. Also moved the c.1882 hollow-chisel broadside frame
+from the 227 to the 204 filmstrip — it depicts a *horizontal* machine (matches the 204, not the
+vertical 227); renamed `ts-227-1882.jpg` → `ts-204-1882.jpg`.
+
+**Data viz (`/dataviz` skill):** built "The collection at a glance" on `about.html` — two **unit
+charts** (each machine = one labeled sienna medallion, linking to its page): by decade of
+manufacture (shows the two clusters — 1920s & 1960s, 3 each — and the empty 1940s–50s war years)
+and by Greenlee series (100 & 400 run deepest, 4 each). Filled medallion = in the collection,
+hollow = awaiting restoration (status by fill, not color-alone) + legend + table-view twin +
+cast-iron hover/focus tooltip (in `site.js`, textContent-safe, value-leads). Single-hue sienna,
+validated for contrast on the cream surface via the skill's validator (6.2:1, PASS). Site is
+single-theme by design → no dark-mode variant (justified deviation). Generator + insert script in
+scratchpad (`build_glance.py`); regenerate from that if the collection changes.
+
+**Bug caught & fixed:** the earlier "Archive" nav addition made the 4-item header nav overflow on
+narrow phones (page scrolled sideways). `.site-nav` now `flex-wrap: wrap` — fixes every page; verified
+no horizontal overflow down to 320px. (The image audit doesn't catch layout overflow; the dataviz
+overflow check did.)
+
+**Verified:** link check (18 pages, 0), image audit local+live PASS, Playwright desktop+mobile
+screenshots + tooltip, no-horizontal-overflow at 412/320px, live spot checks. All pushed.

@@ -144,7 +144,7 @@ h1, h2, h3, h4 {
   transform: translateY(2px);
 }
 
-.site-nav { display: flex; gap: 32px; }
+.site-nav { display: flex; gap: 12px 32px; flex-wrap: wrap; }
 .site-nav a {
   color: var(--ink);
   font-family: var(--serif-text);
@@ -1013,6 +1013,242 @@ section.tight { padding: 40px 0; }
   .pub-links { grid-column: 2; white-space: normal; }
 }
 
+/* ---------- Collection "at a glance" unit charts ---------- */
+
+.viz-figure { margin: 28px 0 0; }
+.viz-figure > figcaption {
+  margin-top: 14px;
+  font-size: 0.84rem;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.viz-heading {
+  font-family: var(--serif-display);
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.viz-sub {
+  margin: 3px 0 20px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* the medallion — one machine (the data mark) */
+.med {
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  border: 1.5px solid var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+  transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1),
+              background 160ms ease, box-shadow 160ms ease;
+}
+.med:hover, .med:focus-visible {
+  background: var(--accent-dk);
+  border-color: var(--accent-dk);
+  color: var(--bg);
+  transform: translateY(-3px);
+  box-shadow: 0 7px 16px -8px rgba(26, 22, 12, 0.6);
+  z-index: 3;
+  border-bottom-color: var(--accent-dk);
+}
+.med.pending {                 /* awaiting restoration = hollow */
+  background: var(--bg);
+  color: var(--accent-dk);
+}
+.med.pending:hover, .med.pending:focus-visible {
+  background: var(--bg-soft);
+  color: var(--accent-dk);
+  border-color: var(--accent-dk);
+}
+
+/* decade columns (unit chart, grows from a shared baseline) */
+.viz-scroll { overflow-x: auto; }
+.unit-cols {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+  align-items: end;
+  min-height: 156px;
+  border-bottom: 1px solid var(--rule);
+}
+.unit-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  padding-bottom: 8px;
+}
+.cap-count {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.unit-axis {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+  margin-top: 8px;
+}
+.unit-axis span {
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.viz-scroll > .unit-cols, .viz-scroll > .unit-axis { min-width: 480px; }
+
+/* series rows */
+.unit-rows { display: flex; flex-direction: column; }
+.unit-row {
+  display: grid;
+  grid-template-columns: 148px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.unit-row:last-child { border-bottom: none; }
+.row-label {
+  font-family: var(--serif-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.row-sub {
+  display: block;
+  font-family: var(--serif-text);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.row-track { display: flex; gap: 8px; flex-wrap: wrap; }
+.row-count {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* legend */
+.viz-legend {
+  display: flex;
+  gap: 26px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.viz-legend .lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.84rem;
+  color: var(--body);
+}
+.viz-legend .med-key {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  background: var(--accent);
+  flex: none;
+}
+.viz-legend .med-key.pending { background: var(--bg); }
+
+/* table-view twin */
+.viz-table-toggle { margin-top: 22px; }
+.viz-table-toggle summary {
+  cursor: pointer;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-dk);
+  font-weight: 600;
+}
+.viz-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 0.9rem;
+}
+.viz-table th, .viz-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--rule);
+}
+.viz-table th {
+  font-family: var(--serif-text);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.viz-table td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* medallion tooltip — cast-iron nameplate */
+.viz-tip {
+  position: absolute;
+  z-index: 200;
+  pointer-events: none;
+  max-width: 250px;
+  background:
+    linear-gradient(160deg, #2c2924 0%, var(--iron) 55%, #201d19 100%);
+  color: var(--on-iron);
+  border: 1px solid #171512;
+  box-shadow: inset 0 0 0 1px var(--iron-edge), 0 12px 30px -14px rgba(26, 22, 12, 0.85);
+  padding: 11px 14px;
+  font-family: var(--serif-text);
+}
+.viz-tip[hidden] { display: none; }
+.viz-tip .vt-no {
+  display: block;
+  font-family: var(--serif-display);
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.05;
+}
+.viz-tip .vt-meta { display: block; margin-top: 3px; font-size: 0.82rem; color: var(--on-iron); }
+.viz-tip .vt-status {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #a89f8b;
+}
+
+@media (max-width: 640px) {
+  .unit-row { grid-template-columns: 92px 1fr auto; gap: 10px; }
+  .row-label { font-size: 0.92rem; }
+}
+
 /* ---------- "Through the Catalogs" filmstrip ---------- */
 
 .filmstrip {
@@ -1080,6 +1316,8 @@ section.tight { padding: 40px 0; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .machine-card .photo img,
   .building-card img { transition: none; }
+  .med { transition: background 120ms ease; }
+  .med:hover, .med:focus-visible { transform: none; box-shadow: none; }
 }
 
 /* ---------- Print ---------- */

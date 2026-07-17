@@ -1,0 +1,4 @@
+model: gemini-3.1-flash-image-preview
+refs: ['Images/factory-machine-floor.png']
+prompt:
+Same engraving, unchanged in every respect, except: correct the lettering cast into the side of the large enclosed planer at the right so it reads exactly GREENLEE in clean period block letters, and correct the lettering on the rip saw base at left to read exactly GREENLEE. No other text anywhere. Keep the identical composition, linework, characters, machines, and cream paper background.
